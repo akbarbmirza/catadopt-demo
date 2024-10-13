@@ -66,7 +66,7 @@ export function Card({
   interactionProps,
   variant = "default",
   asset,
-  padding,
+  padding = "600",
   ...props
 }: CardProps) {
   const { isMobile } = useMediaQuery();
@@ -412,7 +412,7 @@ export function TestimonialCard({
   return (
     <Card {...props} padding="600" direction="vertical" variant="stroke">
       <TextHeading>{heading}</TextHeading>
-      <AvatarBlock title={name} description={`@${username}`}>
+      <AvatarBlock title={name} description={`${username}`}>
         <Avatar size="large" src={src} initials={initials} />
       </AvatarBlock>
     </Card>

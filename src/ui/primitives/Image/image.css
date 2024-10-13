@@ -1,5 +1,5 @@
 .image {
-  max-width: 100%;
+  /* max-width: 100%; */
   object-fit: cover;
   object-position: center;
   width: auto;
@@ -22,15 +22,19 @@ img.image-loading {
 .image-aspect-ratio-1-1 {
   aspect-ratio: 1 / 1;
 }
+
 .image-aspect-ratio-16-9 {
   aspect-ratio: 16 / 9;
 }
+
 .image-aspect-ratio-4-3 {
   aspect-ratio: 4 / 3;
 }
+
 .image-aspect-ratio-fill {
   width: 100%;
 }
+
 .image-aspect-ratio-natural {
   aspect-ratio: auto;
 }
@@ -39,19 +43,23 @@ img.image-loading {
   --image-size-height: 10rem;
   height: var(--image-size-height);
 }
+
 .image-size-medium {
   --image-size-height: 20rem;
   height: var(--image-size-height);
 }
+
 .image-size-large {
   --image-size-height: 30rem;
   height: var(--image-size-height);
 }
+
 .image-size-fill {
   --image-size-height: auto;
   height: var(--image-size-height);
   width: 100%;
 }
+
 .image-size-natural {
   --image-size-height: auto;
   height: var(--image-size-height);

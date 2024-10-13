@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import { useMediaQuery } from "hooks";
 import { IconChevronDown, IconMenu, IconX } from "icons";
-import { placeholder } from "images";
 import { Flex, FlexItem, Section, type SectionProps } from "layout";
 import {
   Avatar,
@@ -29,45 +28,45 @@ export function HeaderAuth() {
   const { currentUser, login, logout } = useContext(AuthenticationContext);
   const [open, setOpen] = useState(false);
 
-  const userButtons = (
-    <>
-      <Button
-        variant="subtle"
-        size="small"
-        onPress={() =>
-          login({
-            avatar: placeholder,
-            name: "Charlie Brown",
-            username: "snooptroupe",
-          })
-        }
-      >
-        Log in
-      </Button>
-      <Button
-        size="small"
-        onPress={() =>
-          login({
-            avatar: placeholder,
-            name: "Charlie Brown",
-            username: "snooptroupe",
-          })
-        }
-      >
-        Register
-      </Button>
-    </>
-  );
+  const userButtons = <></>;
+  // const userButtons = (
+  //   <>
+  //     <Button
+  //       variant="subtle"
+  //       size="small"
+  //       onPress={() =>
+  //         login({
+  //           avatar: placeholder,
+  //           name: "Charlie Brown",
+  //           username: "snooptroupe",
+  //         })
+  //       }
+  //     >
+  //       Log in
+  //     </Button>
+  //     <Button
+  //       size="small"
+  //       onPress={() =>
+  //         login({
+  //           avatar: placeholder,
+  //           name: "Charlie Brown",
+  //           username: "snooptroupe",
+  //         })
+  //       }
+  //     >
+  //       Register
+  //     </Button>
+  //   </>
+  // );
 
   const { isTabletDown } = useMediaQuery();
 
   const navigation = (
     <Navigation direction={isTabletDown ? "column" : "row"}>
-      <NavigationPill isSelected>Pricing</NavigationPill>
-      <NavigationPill>Solutions</NavigationPill>
-      <NavigationPill>Community</NavigationPill>
-      <NavigationPill>Resources</NavigationPill>
-      <NavigationPill>Pricing</NavigationPill>
+      <NavigationPill isSelected>Home</NavigationPill>
+      <NavigationPill>About</NavigationPill>
+      <NavigationPill>Adopt</NavigationPill>
+      <NavigationPill>Donate</NavigationPill>
       <NavigationPill>Contact</NavigationPill>
     </Navigation>
   );

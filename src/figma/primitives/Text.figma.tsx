@@ -119,7 +119,10 @@ figma.connect(TextContentHeading, "<FIGMA_TEXT_TEXT_CONTENT_HEADING>", {
   props: {
     align: figma.enum("Align", { Center: "center" }),
     heading: figma.string("Heading"),
-    subheading: figma.string("Subheading"),
+    subheading: figma.boolean("Has Subheading", {
+      true: figma.string("Subheading"),
+      false: undefined,
+    }),
   },
   example: ({ ...props }) => <TextContentHeading {...props} />,
 });

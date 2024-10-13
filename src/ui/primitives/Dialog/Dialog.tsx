@@ -108,7 +108,6 @@ export type DialogModalProps = RACModalOverlayProps;
 export function DialogModal({
   children,
   className,
-  isDismissable,
   ...props
 }: DialogModalProps) {
   const classNames = clsx(className, "dialog-backdrop");
