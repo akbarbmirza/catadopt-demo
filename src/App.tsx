@@ -6,6 +6,11 @@ import {
   AccordionItem,
   Button,
   ButtonGroup,
+  Dialog,
+  DialogBody,
+  DialogClose,
+  DialogModal,
+  DialogTitle,
   Form,
   Image,
   Input,
@@ -15,11 +20,45 @@ import {
   TextHeading,
 } from "primitives";
 import { AuthenticationProvider } from "providers";
+import { useState } from "react";
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <AuthenticationProvider>
       <Header />
+
+      <DialogModal
+        isDismissable
+        isOpen={isModalOpen}
+        onOpenChange={(isModalOpen) => {
+          setIsModalOpen(isModalOpen);
+        }}
+      >
+        <Dialog type="card">
+          <DialogClose
+            onPress={() => {
+              setIsModalOpen(false);
+            }}
+          />
+          <DialogTitle>Why Cats?</DialogTitle>
+          <DialogBody>
+            Cats make wonderful companions—they are independent yet
+            affectionate, low-maintenance yet playful. They can adapt to various
+            living spaces, provide comfort, and bring joy with their quirky
+            personalities. Whether you’re looking for a cozy lap cat or an
+            energetic playmate, a cat can offer endless love and entertainment
+            while being a calming presence in your home. Plus, adopting a cat
+            saves a life and gives them a chance at a happy, fulfilling future!
+          </DialogBody>
+          <ButtonGroup align="center">
+            <Button onPress={() => {}} variant="primary">
+              Donate to our cause
+            </Button>
+          </ButtonGroup>
+        </Dialog>
+      </DialogModal>
 
       <Hero variant="image" src={"hero.jpg"}>
         <TextContentTitle
@@ -28,7 +67,12 @@ function App() {
           subtitle="Find Your Purrfect Companion"
         />
         <ButtonGroup align="center">
-          <Button onPress={() => {}} variant="primary">
+          <Button
+            onPress={() => {
+              setIsModalOpen(true);
+            }}
+            variant="primary"
+          >
             <IconHelpCircle />
             Why Cats?
           </Button>
